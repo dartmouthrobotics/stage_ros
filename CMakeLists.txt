@@ -14,6 +14,10 @@ find_package(catkin REQUIRED
 
 find_package(Boost REQUIRED COMPONENTS system thread)
 
+if (DEFINED ENV${STG})
+    list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+endif()
+
 find_package(stage REQUIRED)
 
 include_directories(
